@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shift Left Security — Grupo #8</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ── NAVEGACIÓN ── -->
+<nav>
+  <a href="#hero" class="nav-logo">
+  <img src="./imagenes/LOGO-ULEAM-HORIZONTAL.png" alt="Logo ULEAM" class="nav-uleam-logo">
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#introduccion">Intro</a></li>
+    <li><a href="#que-es">¿Qué es?</a></li>
+    <li><a href="#problema">Problema</a></li>
+    <li><a href="#sprints">Sprints</a></li>
+    <li><a href="#codigo">Código</a></li>
+    <li><a href="#reflexion">Reflexión</a></li>
+    <li><a href="#quienes-somos">Nosotros</a></li>
+  </ul>
+  <span class="nav-tag">Grupo #8</span>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero" id="hero">
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <!-- <div class="hero-university">
+      <p>Universidad Laica Eloy Alfaro de Manabí</p>
+      <p>Extensión Chone</p>
+    </div> -->
+    
+    <div class="hero-badges">
+      <span class="hero-label">
+        Seguridad en Software - Grupo #8
+      </span>
+    </div>
+
+    <h1>Shift Left <em>Security</em></h1>
+
+    <p class="hero-sub">
+      Seguridad desde el inicio del desarrollo, porque prevenir siempre es mejor que corregir.
+    </p>
+
+    <div class="hero-meta">
+      Software - 6to Semestre
+    </div>
+
+    <div class="hero-authors">
+      <span>Paulina Chica</span>
+      <span>-</span>
+      <span>Antonio Mendieta</span>
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</div>
+
+
+<!-- ── 01 INTRODUCCIÓN ── -->
+<section id="introduccion" class="reveal">
+  <div class="section-label">01 — Introducción</div>
+  <h2>¿Por qué hablar de seguridad hoy?</h2>
+
+  <div class="intro-story">
+    <strong class="pregunta">¿Alguna vez escuchaste que es mejor prevenir que curar?</strong><br>
+    En el desarrollo de software, esa frase cobra un significado muy especial, y es exactamente de lo que vamos a hablar hoy.
+  </div>
+
+  <p>Somos Paulina Chica y Antonio Mendieta, estudiantes de Ingeniería de Software
+e integrantes del Grupo #8. Como futuros ingenieros, sabemos que escribir código
+es solo una parte del trabajo. La otra parte, que muchas veces se ignora hasta
+que ya es tarde, es asegurarnos de que ese código sea seguro desde el primer día.</p>
+
+  <p> <strong>Imagina esto:</strong> un equipo trabaja durante meses en una aplicación, la lanza al mercado, y una semana después descubren que cualquier persona puede acceder a la información privada de los usuarios con un simple truco en la URL. <strong>¿El resultado?</strong> Pérdida de datos, usuarios afectados, reputación dañada y un costo enorme para arreglarlo.Todo eso pudo haberse evitado si la seguridad se hubiera pensado desde el inicio.</p>
+
+  <p>Eso es exactamente lo que propone <strong>Shift Left Security</strong>: mover las pruebas y controles de seguridad hacia las etapas más tempranas del desarrollo. Mientras más a la izquierda del ciclo de vida se detecta un problema, más fácil y barato es corregirlo.</p>
+
+  <p class="intro-conclusion"><em>A continuación te explicamos qué es Shift Left Security, por qué importa
+  y cómo cambia la forma en que se construye software seguro.</em></p>
+</section>
+
+
+<div class="divider"></div>
+
+<!-- ── 02 QUÉ ES ── -->
+<section id="que-es" class="reveal">
+  <div class="section-label">02 — Definición</div>
+  <h2>¿Qué es Shift Left Security?</h2>
+
+  <div class="def-grid">
+    <div class="def-card">
+      <div class="def-source">OWASP</div>
+      <p>Shift Left Security es la práctica de integrar la seguridad en las primeras etapas del ciclo de vida del desarrollo de software (SDLC), en lugar de tratarla como una fase separada al final del proceso.</p>
+    </div>
+    <div class="def-card">
+      <div class="def-source">NIST</div>
+      <p>Shifting left significa mover la seguridad más temprano en el pipeline de desarrollo, integrándola en las fases de diseño, codificación y pruebas, para que las vulnerabilidades se detecten antes de llegar a producción.</p>
+    </div>
+  </div>
+
+  <h3>Los 5 Principios</h3>
+  <div class="principles-list">
+    <div class="principle-item">
+      <div class="principle-num">1</div>
+      <div>
+        <div class="principle-title">Seguridad desde el diseño</div>
+        <p class="principle-desc">Antes de escribir una sola línea de código, el equipo debe identificar amenazas y definir cómo mitigarlas. La seguridad es parte de la arquitectura, no un parche posterior.</p>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">2</div>
+      <div>
+        <div class="principle-title">Integración continua de seguridad</div>
+        <p class="principle-desc">Las pruebas de seguridad se automatizan e integran en el pipeline CI/CD. Cada vez que se sube código, se analiza automáticamente en busca de vulnerabilidades.</p>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">3</div>
+      <div>
+        <div class="principle-title">Responsabilidad compartida</div>
+        <p class="principle-desc">La seguridad no es solo tarea del equipo de ciberseguridad — es responsabilidad de todos: desarrolladores, testers, diseñadores y líderes de proyecto.</p>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">4</div>
+      <div>
+        <div class="principle-title">Detección temprana de vulnerabilidades</div>
+        <p class="principle-desc">Detectar un fallo en desarrollo cuesta hasta 100 veces menos que corregirlo en producción. Se usan herramientas SAST y DAST durante el desarrollo, no después.</p>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">5</div>
+      <div>
+        <div class="principle-title">Cultura y formación continua</div>
+        <p class="principle-desc">El equipo se capacita continuamente en buenas prácticas. Un desarrollador que conoce el OWASP Top 10 escribe código más seguro desde el inicio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 03 PROBLEMA ── -->
+<section id="problema" class="reveal">
+  <div class="section-label">03 — Problema que soluciona</div>
+  <h2>El costo de ignorar la seguridad</h2>
+
+  <div class="problems-grid">
+    <div class="problem-card">
+      <div class="problem-title">Costos altísimos de corrección</div>
+      <p class="problem-desc">Arreglar una vulnerabilidad en producción puede costar hasta 100 veces más que detectarla durante el desarrollo.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-title">Retrasos en los lanzamientos</div>
+      <p class="problem-desc">Cuando se descubren fallos al final, todo el proyecto se detiene. Los sprints se alargan y los plazos se incumplen.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-title">Datos de usuarios en riesgo</div>
+      <p class="problem-desc">Las brechas exponen información sensible, generando pérdidas de confianza, sanciones legales y daño reputacional.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-title">Deuda técnica acumulada</div>
+      <p class="problem-desc">El código inseguro se acumula sprint tras sprint, volviéndose cada vez más difícil y costoso de corregir.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-title">Equipos desconectados</div>
+      <p class="problem-desc">Los desarrolladores escriben código y el equipo de seguridad lo revisa semanas después, sin cultura compartida.</p>
+    </div>
+    <div class="problem-card" style="background: rgba(29,78,216,0.03); border-color: rgba(29,78,216,0.2);">
+      <div class="problem-title" style="color: var(--accent-green);">La solución: Shift Left</div>
+      <p class="problem-desc">Integrar seguridad desde el inicio reduce todos estos problemas, construyendo software más robusto y equipos más conscientes.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 04 SPRINTS ── -->
+<section id="sprints" class="reveal">
+  <div class="section-label">04 — Metodología Ágil</div>
+  <h2>Relación con Sprints Ágiles</h2>
+  <p>En metodologías ágiles, Shift Left Security propone que cada Sprint tenga sus propias actividades de seguridad integradas. Un Sprint no está completo si el código no pasó las pruebas de seguridad correspondientes.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sprint</th>
+          <th>Actividad</th>
+          <th>Seguridad aplicada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="sprint-badge">Sprint 1</span></td>
+          <td>Login</td>
+          <td><span class="security-tag">Validación de entrada, protección contra SQL Injection</span></td>
+        </tr>
+        <tr>
+          <td><span class="sprint-badge">Sprint 2</span></td>
+          <td>Registro de usuarios</td>
+          <td><span class="security-tag">Hash de contraseñas, validación de formularios</span></td>
+        </tr>
+        <tr>
+          <td><span class="sprint-badge">Sprint 3</span></td>
+          <td>Gestión de sesiones</td>
+          <td><span class="security-tag">Tokens seguros, expiración de sesiones</span></td>
+        </tr>
+        <tr>
+          <td><span class="sprint-badge">Sprint 4</span></td>
+          <td>Subida de archivos</td>
+          <td><span class="security-tag">Validación de tipo/tamaño, sanitización de rutas</span></td>
+        </tr>
+        <tr>
+          <td><span class="sprint-badge">Sprint 5</span></td>
+          <td>Panel de administración</td>
+          <td><span class="security-tag">Control de acceso por roles (RBAC), 2FA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 05 CÓDIGO ── -->
+<section id="codigo" class="reveal">
+  <div class="section-label">05 — Grupo #8 · Análisis de Código</div>
+  <h2>Código vulnerable y su corrección</h2>
+  <p>El siguiente código corresponde al <strong>Grupo #8</strong>. Valida la edad de un usuario sin sanitizar correctamente la entrada, generando múltiples vulnerabilidades.</p>
+
+  <!-- Código vulnerable -->
+  <div class="code-section">
+    <div class="code-header">
+      <div class="code-dots">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+      </div>
+      <span class="code-label">VulnerableServlet.java</span>
+      <span class="vuln-badge">⚠ VULNERABLE</span>
+    </div>
+    <pre><span class="cm">// Código del Grupo #8 — SIN aplicar Shift Left Security</span>
+
+<span class="kw">String</span> edadStr = request.<span class="fn">getParameter</span>(<span class="str">"edad"</span>);
+<span class="vuln-line"><span class="kw">int</span> edad = Integer.<span class="fn">parseInt</span>(edadStr);     <span class="cm">// ⚠ Sin validar null ni formato</span></span>
+
+<span class="kw">if</span> (edad > <span class="num">18</span>) {
+    <span class="fn">registrarUsuario</span>();
+}</pre>
+  </div>
+
+  <!-- Tabla OWASP -->
+  <h3>Análisis de vulnerabilidades</h3>
+  <div class="analysis-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vulnerabilidad</th>
+          <th>Evidencia en el código</th>
+          <th>OWASP Top 10</th>
+          <th>Tipo de prueba</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Falta de validación de entrada</td>
+          <td><code style="font-family:monospace;font-size:0.82rem">getParameter("edad")</code> sin verificar null</td>
+          <td><span class="owasp-tag">A03 - Injection</span></td>
+          <td>Análisis estático (SAST)</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Excepción no controlada</td>
+          <td><code style="font-family:monospace;font-size:0.82rem">parseInt(edadStr)</code> sin try/catch</td>
+          <td><span class="owasp-tag">A05 - Misconfig</span></td>
+          <td>Prueba manual</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sin límite de rango</td>
+          <td>Solo valida <code style="font-family:monospace;font-size:0.82rem">edad > 18</code>, acepta 9999</td>
+          <td><span class="owasp-tag">A04 - Insecure Design</span></td>
+          <td>Prueba de límites</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Código seguro -->
+  <h3>Código mejorado — Shift Left aplicado</h3>
+  <div class="code-section">
+    <div class="code-header">
+      <div class="code-dots">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+      </div>
+      <span class="code-label">SecureServlet.java</span>
+      <span class="secure-badge">✓ SEGURO</span>
+    </div>
+    <pre><span class="cm">// Código del Grupo #8 — CON Shift Left Security aplicado</span>
+
+<span class="kw">String</span> edadStr = request.<span class="fn">getParameter</span>(<span class="str">"edad"</span>);
+
+<span class="cm">// 1. Validar que el parámetro no sea null o vacío</span>
+<span class="secure-line"><span class="kw">if</span> (edadStr == <span class="kw">null</span> || edadStr.<span class="fn">trim</span>().<span class="fn">isEmpty</span>()) {</span>
+<span class="secure-line">    response.<span class="fn">sendError</span>(HttpServletResponse.SC_BAD_REQUEST, <span class="str">"El parámetro 'edad' es requerido"</span>);</span>
+<span class="secure-line">    <span class="kw">return</span>;</span>
+<span class="secure-line">}</span>
+
+<span class="cm">// 2. Parsear con manejo de excepción</span>
+<span class="kw">int</span> edad;
+<span class="secure-line"><span class="kw">try</span> {</span>
+<span class="secure-line">    edad = Integer.<span class="fn">parseInt</span>(edadStr.<span class="fn">trim</span>());</span>
+<span class="secure-line">} <span class="kw">catch</span> (NumberFormatException e) {</span>
+<span class="secure-line">    response.<span class="fn">sendError</span>(HttpServletResponse.SC_BAD_REQUEST, <span class="str">"La edad debe ser un número entero"</span>);</span>
+<span class="secure-line">    <span class="kw">return</span>;</span>
+<span class="secure-line">}</span>
+
+<span class="cm">// 3. Validar rango lógico (0–120)</span>
+<span class="secure-line"><span class="kw">if</span> (edad < <span class="num">0</span> || edad > <span class="num">120</span>) {</span>
+<span class="secure-line">    response.<span class="fn">sendError</span>(HttpServletResponse.SC_BAD_REQUEST, <span class="str">"Edad fuera de rango permitido"</span>);</span>
+<span class="secure-line">    <span class="kw">return</span>;</span>
+<span class="secure-line">}</span>
+
+<span class="cm">// 4. Lógica de negocio — ahora sí es segura</span>
+<span class="kw">if</span> (edad > <span class="num">18</span>) {
+    <span class="fn">registrarUsuario</span>();
+}</pre>
+  </div>
+
+  <div class="solution-banner">
+    <strong>Mejoras aplicadas (Shift Left Security):</strong><br>
+    ① Validación de null y vacío antes de procesar &nbsp;·&nbsp;
+    ② Manejo de excepciones con try/catch &nbsp;·&nbsp;
+    ③ Restricción de rango lógico (0–120) &nbsp;·&nbsp;
+    ④ Mensajes de error sin exponer datos internos
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 06 REFLEXIÓN ── -->
+<section id="reflexion" class="reveal">
+  <div class="section-label">06 — Reflexión Crítica</div>
+  <h2>Lo que aprendimos</h2>
+
+  <div class="reflection-quote">
+    <p>"La seguridad no es una función del producto — es una propiedad que debe estar presente desde el primer commit."</p>
+    <cite>— Antonio Mendieta &amp; Paulina Chica, Grupo #8</cite>
+  </div>
+
+  <br>
+  <p>Analizar nuestro propio código con ojos críticos fue uno de los ejercicios más valiosos de este proceso. Lo que parecía una validación simple —verificar si alguien es mayor de 18— escondía tres vulnerabilidades reales que en producción podrían causar caídas del sistema o comportamientos inesperados.</p>
+
+  <p>Shift Left Security no es solo una técnica; es un cambio de mentalidad. Nos enseña que <strong>la seguridad no se agrega al final, se diseña desde el principio</strong>. Como ingenieros de software, adoptar esta filosofía nos hace mejores profesionales y nos prepara para construir sistemas en los que las personas puedan confiar.</p>
+
+  <p><em>— Esta sección será complementada con más reflexiones del equipo. —</em></p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── QUIÉNES SOMOS ── -->
+<section id="quienes-somos" class="reveal">
+  <div class="section-label">07 — Equipo</div>
+  <h2>¿Quiénes somos?</h2>
+
+  <div class="team-grid">
+
+    <!-- Paulina -->
+    <div class="team-card">
+      <img src="imagenes/paulina.jpeg" alt="Paulina Chica">
+      <div class="team-info">
+        <h3>Paulina Chica</h3>
+        <p>
+          Estudiante de Ingeniería de Software interesada en el desarrollo web,
+          bases de datos y seguridad en aplicaciones. Participó en la investigación,
+          análisis y elaboración de este proyecto.
+        </p>
+      </div>
+    </div>
+
+    <!-- Antonio -->
+    <div class="team-card">
+      <img src="imagenes/antonio.jpeg" alt="Antonio Mendieta">
+      <div class="team-info">
+        <h3>Antonio Mendieta</h3>
+        <p>
+          Estudiante de Ingeniería de Software enfocado en el desarrollo de
+          aplicaciones y buenas prácticas de programación segura. Participó en el
+          análisis del tema y construcción de los contenidos presentados.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ── FOOTER ── -->
+<footer>
+  <p>Shift Left Security · Ingeniería de Software · Grupo #8 · Antonio Mendieta &amp; Paulina Chica</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
