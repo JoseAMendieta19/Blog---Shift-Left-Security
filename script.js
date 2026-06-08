@@ -47,3 +47,24 @@ window.addEventListener('scroll', () => {
       : '';
   });
 });
+
+// ── SIMULADOR SAST ──────────────────────────────────────────────
+const btnScan    = document.getElementById('btnScan');
+const scanResult = document.getElementById('scanResult');
+
+if (btnScan && scanResult) {
+  btnScan.addEventListener('click', () => {
+    scanResult.style.display = 'block';
+    scanResult.innerHTML = `
+      <span style="color:var(--accent-warm);font-weight:600;">[CRITICAL ALERT] SAST Scanner v2.4</span><br>
+      <span style="color:var(--ink-light);">➔ Target File:</span> VulnerableServlet.java<br>
+      <span style="color:var(--ink-light);">➔ Code Line:</span> <code>int edad = Integer.parseInt(edadStr);</code><br>
+      <span style="color:var(--ink-light);">➔ CWE:</span> CWE-248 (Uncaught Exception)<br>
+      <span style="color:var(--ink-light);">➔ OWASP:</span> A05:2021 - Security Misconfiguration<br>
+      <span style="color:var(--ink-light);">➔ Riesgo:</span> Entrada no numérica rompe el hilo de ejecución,
+      provocando DoS y exposición de trazas internas del servidor.
+    `;
+    btnScan.textContent = 'Auditoría Finalizada';
+    btnScan.style.background = 'var(--accent-green)';
+  });
+}

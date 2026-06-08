@@ -22,6 +22,7 @@
     <li><a href="#sprints">Sprints</a></li>
     <li><a href="#codigo">Código</a></li>
     <li><a href="#reflexion">Reflexión</a></li>
+    <li><a href="#bibliografia">Referencias</a></li>
     <li><a href="#quienes-somos">Nosotros</a></li>
   </ul>
   <span class="nav-tag">Grupo #8</span>
@@ -126,33 +127,6 @@ que ya es tarde, es asegurarnos de que ese código sea seguro desde el primer d�
   rápido, ahorrar recursos y lanzar software que ya nace seguro.
 </div>
 
-<div class="video-wrap">
-  <h3 class="video-title">Video explicativo</h3>
-  <p class="video-texto">El siguiente recurso audiovisual
-resume de forma sencilla y concisa qué es Shift Left Security y
-cómo se aplica en el desarrollo de software.</p>
-  <div class="video-container">
-  <video controls width="100%" poster="./imagenes/miniatura.png">
-    <source src="./videos/Shift Left video.mp4" type="video/mp4" >
-    <track 
-      kind="subtitles" 
-      src="videos/shiftleft.vtt" 
-      srclang="es" 
-      label="Español"
-      default>
-  </video>
-</div>
-
-
-</div>
-<p class="video-credit">
-  Créditos: <strong>
-(GeekCore, 2026)</strong> · 
-  <a href="https://youtu.be/mDz01UCC_T4?si=eNHTKmrFJl5jHoVk" target="_blank">
-    Ver video original en YouTube
-  </a>
-</p>
-
   <h3>Los 5 Principios</h3>
   <div class="principles-list">
     <div class="principle-item">
@@ -191,6 +165,328 @@ cómo se aplica en el desarrollo de software.</p>
       </div>
     </div>
   </div>
+
+<!-- ── DIAGRAMA SHIFT LEFT PIPELINE ── -->
+<!-- Pegar justo después del .intro-story y antes del .video-wrap en sección 02 -->
+
+<div class="diagram-wrap">
+  <h3>El pipeline del SDLC: tradicional vs Shift Left</h3>
+  <p class="diagram-desc">
+    En el enfoque tradicional la seguridad llega al final, cuando corregir un fallo
+    ya cuesta hasta 100 veces más. Shift Left la integra desde los requisitos,
+    distribuyendo el esfuerzo a lo largo de todo el ciclo de vida.
+  </p>
+  <div class="diagram-container">
+    <svg width="100%" viewBox="0 0 680 540" role="img"
+         aria-labelledby="diag-title diag-desc">
+      <title id="diag-title">Pipeline Shift Left Security</title>
+      <desc id="diag-desc">
+        Comparación entre el enfoque tradicional (seguridad solo en pruebas y
+        producción) y Shift Left Security (seguridad integrada desde requisitos,
+        diseño y desarrollo).
+      </desc>
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- ── Eje de tiempo ── -->
+      <line x1="50" y1="110" x2="630" y2="110"
+            stroke="#888780" stroke-width="0.5" stroke-opacity="0.3"/>
+      <text font-family="'JetBrains Mono',monospace" font-size="11"
+            fill="#888780" x="50" y="100" opacity="0.5">← Inicio</text>
+      <text font-family="'JetBrains Mono',monospace" font-size="11"
+            fill="#888780" x="580" y="100" opacity="0.5">Fin →</text>
+
+      <!-- Título interno -->
+      <text font-family="'DM Serif Display',serif" font-size="15" font-weight="500"
+            fill="#1A1A18" x="340" y="40" text-anchor="middle">
+        Pipeline del SDLC
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="12"
+            fill="#6B6B65" x="340" y="60" text-anchor="middle">
+        Ciclo de vida del desarrollo de software
+      </text>
+
+      <!-- ── Etapas ── -->
+      <!-- Requisitos -->
+      <rect x="42" y="78" width="96" height="64" rx="8"
+            fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="13" font-weight="500"
+            fill="#085041" x="90" y="103" text-anchor="middle" dominant-baseline="central">
+        Requisitos
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#0F6E56" x="90" y="124" text-anchor="middle" dominant-baseline="central">
+        Análisis
+      </text>
+
+      <!-- Diseño -->
+      <rect x="156" y="78" width="96" height="64" rx="8"
+            fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="13" font-weight="500"
+            fill="#085041" x="204" y="103" text-anchor="middle" dominant-baseline="central">
+        Diseño
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#0F6E56" x="204" y="124" text-anchor="middle" dominant-baseline="central">
+        Arquitectura
+      </text>
+
+      <!-- Desarrollo -->
+      <rect x="270" y="78" width="96" height="64" rx="8"
+            fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="13" font-weight="500"
+            fill="#085041" x="318" y="103" text-anchor="middle" dominant-baseline="central">
+        Desarrollo
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#0F6E56" x="318" y="124" text-anchor="middle" dominant-baseline="central">
+        Codificación
+      </text>
+
+      <!-- Pruebas -->
+      <rect x="384" y="78" width="96" height="64" rx="8"
+            fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="13" font-weight="500"
+            fill="#2C2C2A" x="432" y="103" text-anchor="middle" dominant-baseline="central">
+        Pruebas
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#5F5E5A" x="432" y="124" text-anchor="middle" dominant-baseline="central">
+        QA / Testing
+      </text>
+
+      <!-- Producción -->
+      <rect x="498" y="78" width="110" height="64" rx="8"
+            fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="13" font-weight="500"
+            fill="#2C2C2A" x="553" y="103" text-anchor="middle" dominant-baseline="central">
+        Producción
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#5F5E5A" x="553" y="124" text-anchor="middle" dominant-baseline="central">
+        Despliegue
+      </text>
+
+      <!-- Flechas entre etapas (nivel SDLC) -->
+      <line x1="138" y1="110" x2="155" y2="110" stroke="#888780"
+            stroke-width="1" stroke-opacity="0.35" marker-end="url(#arrow)"/>
+      <line x1="252" y1="110" x2="269" y2="110" stroke="#888780"
+            stroke-width="1" stroke-opacity="0.35" marker-end="url(#arrow)"/>
+      <line x1="366" y1="110" x2="383" y2="110" stroke="#888780"
+            stroke-width="1" stroke-opacity="0.35" marker-end="url(#arrow)"/>
+      <line x1="480" y1="110" x2="497" y2="110" stroke="#888780"
+            stroke-width="1" stroke-opacity="0.35" marker-end="url(#arrow)"/>
+
+      <!-- ── Separador 1 ── -->
+      <line x1="42" y1="185" x2="608" y2="185"
+            stroke="#888780" stroke-width="0.5" stroke-dasharray="4 4" stroke-opacity="0.2"/>
+
+      <!-- ── BLOQUE TRADICIONAL ── -->
+      <text font-family="'JetBrains Mono',monospace" font-size="11"
+            fill="#6B6B65" x="50" y="208" opacity="0.7">
+        Enfoque tradicional
+      </text>
+
+      <!-- Etapas sin seguridad (atenuadas) -->
+      <rect x="42"  y="218" width="86" height="44" rx="8"
+            fill="#F7F5F0" stroke="#E2DDD6" stroke-width="0.5" opacity="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#6B6B65" x="85" y="244" text-anchor="middle"
+            dominant-baseline="central" opacity="0.45">Sin seguridad</text>
+
+      <rect x="156" y="218" width="86" height="44" rx="8"
+            fill="#F7F5F0" stroke="#E2DDD6" stroke-width="0.5" opacity="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#6B6B65" x="199" y="244" text-anchor="middle"
+            dominant-baseline="central" opacity="0.45">Sin seguridad</text>
+
+      <rect x="270" y="218" width="86" height="44" rx="8"
+            fill="#F7F5F0" stroke="#E2DDD6" stroke-width="0.5" opacity="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#6B6B65" x="313" y="244" text-anchor="middle"
+            dominant-baseline="central" opacity="0.45">Sin seguridad</text>
+
+      <!-- Seguridad solo al final (rojo) -->
+      <rect x="384" y="218" width="86" height="44" rx="8"
+            fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#791F1F" x="427" y="235" text-anchor="middle" dominant-baseline="central">
+        Seguridad
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#A32D2D" x="427" y="250" text-anchor="middle" dominant-baseline="central">
+        al final
+      </text>
+
+      <rect x="498" y="218" width="108" height="44" rx="8"
+            fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#791F1F" x="552" y="233" text-anchor="middle" dominant-baseline="central">
+        Vulnerabi-
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#A32D2D" x="552" y="248" text-anchor="middle" dominant-baseline="central">
+        lidades $$$
+      </text>
+
+      <!-- Flechas tradicional -->
+      <line x1="128" y1="240" x2="155" y2="240" stroke="#888780"
+            stroke-width="0.75" stroke-opacity="0.2" marker-end="url(#arrow)"/>
+      <line x1="242" y1="240" x2="269" y2="240" stroke="#888780"
+            stroke-width="0.75" stroke-opacity="0.2" marker-end="url(#arrow)"/>
+      <line x1="356" y1="240" x2="383" y2="240" stroke="#A32D2D"
+            stroke-width="0.75" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+      <line x1="474" y1="240" x2="497" y2="240" stroke="#A32D2D"
+            stroke-width="0.75" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#A32D2D" x="552" y="278" text-anchor="middle" opacity="0.85">
+        Corrección cara
+      </text>
+
+      <!-- ── Separador 2 ── -->
+      <line x1="42" y1="310" x2="608" y2="310"
+            stroke="#888780" stroke-width="0.5" stroke-dasharray="4 4" stroke-opacity="0.2"/>
+
+      <!-- ── BLOQUE SHIFT LEFT ── -->
+      <text font-family="'JetBrains Mono',monospace" font-size="11"
+            fill="#6B6B65" x="50" y="330" opacity="0.7">
+        Shift Left Security
+      </text>
+
+      <!-- Requisitos -->
+      <rect x="42" y="340" width="86" height="56" rx="8"
+            fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#0C447C" x="85" y="360" text-anchor="middle" dominant-baseline="central">
+        Requisitos
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="10"
+            fill="#185FA5" x="85" y="377" text-anchor="middle" dominant-baseline="central">
+        Modelado amenazas
+      </text>
+
+      <!-- Diseño -->
+      <rect x="156" y="340" width="86" height="56" rx="8"
+            fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#0C447C" x="199" y="360" text-anchor="middle" dominant-baseline="central">
+        Diseño
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="10"
+            fill="#185FA5" x="199" y="377" text-anchor="middle" dominant-baseline="central">
+        Secure by design
+      </text>
+
+      <!-- Desarrollo -->
+      <rect x="270" y="340" width="86" height="56" rx="8"
+            fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#0C447C" x="313" y="360" text-anchor="middle" dominant-baseline="central">
+        Desarrollo
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="10"
+            fill="#185FA5" x="313" y="377" text-anchor="middle" dominant-baseline="central">
+        SAST / code review
+      </text>
+
+      <!-- Pruebas -->
+      <rect x="384" y="340" width="86" height="56" rx="8"
+            fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#085041" x="427" y="360" text-anchor="middle" dominant-baseline="central">
+        Pruebas
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="10"
+            fill="#0F6E56" x="427" y="377" text-anchor="middle" dominant-baseline="central">
+        DAST / pen test
+      </text>
+
+      <!-- Producción -->
+      <rect x="498" y="340" width="110" height="56" rx="8"
+            fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+      <text font-family="'DM Sans',sans-serif" font-size="12" font-weight="500"
+            fill="#085041" x="553" y="360" text-anchor="middle" dominant-baseline="central">
+        Producción
+      </text>
+      <text font-family="'DM Sans',sans-serif" font-size="10"
+            fill="#0F6E56" x="553" y="377" text-anchor="middle" dominant-baseline="central">
+        Monitoreo continuo
+      </text>
+
+      <!-- Flechas shift left -->
+      <line x1="128" y1="368" x2="155" y2="368" stroke="#185FA5"
+            stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+      <line x1="242" y1="368" x2="269" y2="368" stroke="#185FA5"
+            stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+      <line x1="356" y1="368" x2="383" y2="368" stroke="#185FA5"
+            stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+      <line x1="470" y1="368" x2="497" y2="368" stroke="#0F6E56"
+            stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#0F6E56" x="553" y="410" text-anchor="middle" opacity="0.9">
+        Bajo costo de corrección
+      </text>
+
+      <!-- Flecha grande "shift" -->
+      <line x1="468" y1="455" x2="100" y2="455"
+            stroke="#1D4ED8" stroke-width="2" stroke-opacity="0.3"
+            marker-end="url(#arrow)"/>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#6B6B65" x="284" y="446" text-anchor="middle" opacity="0.6">
+        Seguridad se mueve hacia la izquierda
+      </text>
+
+      <!-- Leyenda -->
+      <rect x="42" y="476" width="12" height="12" rx="3" fill="#B5D4F4"/>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#6B6B65" x="60" y="486">
+        Etapas con seguridad integrada (Shift Left)
+      </text>
+      <rect x="330" y="476" width="12" height="12" rx="3" fill="#F7C1C1"/>
+      <text font-family="'DM Sans',sans-serif" font-size="11"
+            fill="#6B6B65" x="348" y="486">
+        Seguridad tardía (enfoque tradicional)
+      </text>
+
+    </svg>
+  </div><!-- /.diagram-container -->
+</div><!-- /.diagram-wrap -->
+
+<div class="video-wrap">
+  <h3 class="video-title">Video explicativo</h3>
+  <p class="video-texto">El siguiente recurso audiovisual
+resume de forma sencilla y concisa qué es Shift Left Security y
+cómo se aplica en el desarrollo de software.</p>
+  <div class="video-container">
+  <video controls width="100%" >
+    <source src="./videos/Shift Left video.mp4" type="video/mp4" >
+    <track 
+      kind="subtitles" 
+      src="videos/shiftleft.vtt" 
+      srclang="es" 
+      label="Español"
+      default>
+  </video>
+</div>
+
+
+</div>
+<p class="video-credit">
+  Créditos: <strong>
+(GeekCore, 2026)</strong> · 
+  <a href="https://youtu.be/mDz01UCC_T4?si=eNHTKmrFJl5jHoVk" target="_blank">
+    Ver video original en YouTube
+  </a>
+</p>
+
+
 </section>
 
 <div class="divider"></div>
@@ -282,7 +578,8 @@ cómo se aplica en el desarrollo de software.</p>
 <section id="codigo" class="reveal">
   <div class="section-label">05 — Grupo #8 · Análisis de Código</div>
   <h2>Código vulnerable y su corrección</h2>
-  <p>El siguiente código corresponde al <strong>Grupo #8</strong>. Valida la edad de un usuario sin sanitizar correctamente la entrada, generando múltiples vulnerabilidades.</p>
+
+  <p>El siguiente fragmento fue desarrollado por el <strong>Grupo #8</strong> como parte del sprint de validación de formularios. A simple vista parece funcional, pero contiene vulnerabilidades reales que en producción podrían comprometer la estabilidad del sistema.</p>
 
   <!-- Código vulnerable -->
   <div class="code-section">
@@ -306,46 +603,63 @@ cómo se aplica en el desarrollo de software.</p>
   </div>
 
   <!-- Tabla OWASP -->
-  <h3>Análisis de vulnerabilidades</h3>
-  <div class="analysis-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Vulnerabilidad</th>
-          <th>Evidencia en el código</th>
-          <th>OWASP Top 10</th>
-          <th>Tipo de prueba</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Falta de validación de entrada</td>
-          <td><code style="font-family:monospace;font-size:0.82rem">getParameter("edad")</code> sin verificar null</td>
-          <td><span class="owasp-tag">A03 - Injection</span></td>
-          <td>Análisis estático (SAST)</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Excepción no controlada</td>
-          <td><code style="font-family:monospace;font-size:0.82rem">parseInt(edadStr)</code> sin try/catch</td>
-          <td><span class="owasp-tag">A05 - Misconfig</span></td>
-          <td>Prueba manual</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Sin límite de rango</td>
-          <td>Solo valida <code style="font-family:monospace;font-size:0.82rem">edad > 18</code>, acepta 9999</td>
-          <td><span class="owasp-tag">A04 - Insecure Design</span></td>
-          <td>Prueba de límites</td>
-        </tr>
-      </tbody>
-    </table>
+ <h3>Análisis de vulnerabilidades</h3>
+ <p>A continuación se identifican las vulnerabilidades presentes en el código, 
+clasificadas según el estándar OWASP Top 10 y el tipo de prueba que permitiría detectarlas.</p>
+<div class="analysis-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Vulnerabilidad</th>
+        <th>Evidencia en el código</th>
+        <th>OWASP Top 10</th>
+        <th>Tipo de prueba</th>
+        <th>¿Manual / Automática?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Falta de validación de entrada</td>
+        <td><code style="font-family:monospace;font-size:0.82rem">getParameter("edad")</code> sin verificar null</td>
+        <td><span class="owasp-tag">A03 - Injection</span></td>
+        <td>SAST</td>
+        <td>Automática</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Excepción no controlada</td>
+        <td><code style="font-family:monospace;font-size:0.82rem">parseInt(edadStr)</code> sin try/catch</td>
+        <td><span class="owasp-tag">A05 - Misconfig</span></td>
+        <td>SAST</td>
+        <td>Automática</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Sin límite de rango</td>
+        <td>Solo valida <code style="font-family:monospace;font-size:0.82rem">edad > 18</code>, acepta 9999</td>
+        <td><span class="owasp-tag">A04 - Insecure Design</span></td>
+        <td>DAST / Lógica</td>
+        <td>Manual</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <!-- Simulador SAST -->
+  <div class="sast-box">
+    <h3>Simulador de Escaneo Automatizado (SAST)</h3>
+    <p>Haz clic para simular la ejecución de una herramienta automática
+    de análisis de código sobre el fragmento del Grupo #8.</p>
+    <button class="sast-btn" id="btnScan">Ejecutar Auditoría Estática</button>
+    <div class="sast-result" id="scanResult"></div>
   </div>
 
   <!-- Código seguro -->
   <h3>Código mejorado — Shift Left aplicado</h3>
+  <p>Cada bloque del código corrige directamente una de las 
+vulnerabilidades identificadas en la tabla anterior.</p>
   <div class="code-section">
     <div class="code-header">
       <div class="code-dots">
@@ -388,14 +702,30 @@ cómo se aplica en el desarrollo de software.</p>
   </div>
 
   <div class="solution-banner">
-    <strong>Mejoras aplicadas (Shift Left Security):</strong><br>
-    ① Validación de null y vacío antes de procesar &nbsp;·&nbsp;
-    ② Manejo de excepciones con try/catch &nbsp;·&nbsp;
-    ③ Restricción de rango lógico (0–120) &nbsp;·&nbsp;
-    ④ Mensajes de error sin exponer datos internos
-  </div>
-</section>
+  <p class="solution-label">Mejoras aplicadas · Shift Left Security</p>
+  <ul class="solution-list">
+    <li>
+      <span class="solution-num">01</span>
+      <span>Validación de null y vacío antes de procesar</span>
+    </li>
+    <li>
+      <span class="solution-num">02</span>
+      <span>Manejo de excepciones con try/catch</span>
+    </li>
+    <li>
+      <span class="solution-num">03</span>
+      <span>Restricción de rango lógico (0–120)</span>
+    </li>
+    <li>
+      <span class="solution-num">04</span>
+      <span>Mensajes de error sin exponer datos internos</span>
+    </li>
+  </ul>
+</div>
 
+  <p style="margin-top: 1.5rem;">Este ejercicio demuestra que incluso un fragmento de código pequeño puede esconder múltiples puntos de fallo. Aplicar Shift Left Security desde el primer sprint evita que estos problemas lleguen a producción.</p>
+
+</section>
 <div class="divider"></div>
 
 <!-- ── 06 REFLEXIÓN ── -->
@@ -403,24 +733,48 @@ cómo se aplica en el desarrollo de software.</p>
   <div class="section-label">06 — Reflexión Crítica</div>
   <h2>Lo que aprendimos</h2>
 
-  <div class="reflection-quote">
-    <p>"La seguridad no es una función del producto — es una propiedad que debe estar presente desde el primer commit."</p>
-    <cite>— Antonio Mendieta &amp; Paulina Chica, Grupo #8</cite>
-  </div>
+  
 
   <br>
   <p>Analizar nuestro propio código con ojos críticos fue uno de los ejercicios más valiosos de este proceso. Lo que parecía una validación simple —verificar si alguien es mayor de 18— escondía tres vulnerabilidades reales que en producción podrían causar caídas del sistema o comportamientos inesperados.</p>
 
   <p>Shift Left Security no es solo una técnica; es un cambio de mentalidad. Nos enseña que <strong>la seguridad no se agrega al final, se diseña desde el principio</strong>. Como ingenieros de software, adoptar esta filosofía nos hace mejores profesionales y nos prepara para construir sistemas en los que las personas puedan confiar.</p>
+  <div class="reflection-quote">
+    <p>"La seguridad no es una función del producto — es una propiedad que debe estar presente desde el primer commit."</p>
+    <cite>— Paulina Chica &amp; Antonio Mendieta, Grupo #8</cite>
+  </div>
 
-  <p><em>— Esta sección será complementada con más reflexiones del equipo. —</em></p>
 </section>
 
 <div class="divider"></div>
 
+
+
+<!-- ── 07 BIBLIOGRAFÍA ── -->
+<section id="bibliografia" class="reveal">
+  <div class="section-label">07 — Referencias</div>
+  <h2>Bibliografía</h2>
+
+  <div class="bib-list">
+    <div class="bib-item">
+      <div class="bib-num">01</div>
+      <p class="bib-text">OWASP Foundation. (2025). <em>Shift Left Testing and Security in Modern Development.</em> Open Worldwide Application Security Project. <a href="https://owasp.org" target="_blank">https://owasp.org</a></p>
+    </div>
+    <div class="bib-item">
+      <div class="bib-num">02</div>
+      <p class="bib-text">National Institute of Standards and Technology. (2024). <em>Securing the Software Supply Chain: Shift Left Principles.</em> U.S. Department of Commerce. <a href="https://www.nist.gov" target="_blank">https://www.nist.gov</a></p>
+    </div>
+    <div class="bib-item">
+      <div class="bib-num">03</div>
+      <p class="bib-text">GeekCore. (2026, Enero 14). <em>Security Shift-Left</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=mDz01UCC_T4" target="_blank">https://www.youtube.com/watch?v=mDz01UCC_T4</a></p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
 <!-- ── QUIÉNES SOMOS ── -->
 <section id="quienes-somos" class="reveal">
-  <div class="section-label">07 — Equipo</div>
+  <div class="section-label">08 — Equipo</div>
   <h2>¿Quiénes somos?</h2>
 
   <div class="team-grid">
@@ -455,7 +809,7 @@ cómo se aplica en el desarrollo de software.</p>
 </section>
 <!-- ── FOOTER ── -->
 <footer>
-  <p>Shift Left Security · Ingeniería de Software · Grupo #8 · Antonio Mendieta &amp; Paulina Chica</p>
+  <p>Shift Left Security · Ingeniería de Software · Grupo #8 · Paulina Chica &amp; Antonio Mendieta</p>
 </footer>
 
 <script src="script.js"></script>

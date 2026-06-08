@@ -221,7 +221,7 @@ p strong {
   font-size: 0.75rem;
   color: var(--ink-light);
   margin-top: 0px;
-  margin-bottom: 2rem;
+  margin-bottom: 0px;
 
 }
 
@@ -439,15 +439,50 @@ p { color: var(--ink-light); margin-bottom: 1.2rem; font-weight: 300; }
 
 .solution-banner {
   margin-top: 2rem;
-  background: linear-gradient(135deg, #1D4ED8 0%, #1e40af 100%);
-  color: white;
-  border-radius: 12px;
-  padding: 2rem 2.5rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  font-weight: 300;
+  background: #FFFFFF;
+  border: 1px solid #E2DDD6;
+  border-left: 3px solid #1D4ED8;
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 2rem;
 }
-.solution-banner strong { font-weight: 600; }
+
+.solution-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1D4ED8;
+  margin: 0 0 1rem;
+  font-weight: 400;
+}
+
+.solution-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.solution-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #1A1A18;
+  font-weight: 500;
+}
+
+.solution-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  background: rgba(29, 78, 216, 0.1);
+  color: #1D4ED8;
+  border-radius: 5px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+}
 
 /* ── SPRINTS TABLE ── */
 .table-wrap {
@@ -692,9 +727,7 @@ footer {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  object-position: top;
-  /* CORRECCIÓN 3 — Se agregó object-position: top para que las fotos
-     portrait muestren la cara en lugar del centro de la imagen */
+  object-position: center 18%;
   display: block;
 }
 
@@ -756,3 +789,130 @@ footer {
   line-height: 1.8;
   font-weight: 300;
 }
+
+/* ── SAST SIMULATOR ── */
+.sast-box {
+  background: rgba(29,78,216,0.04);
+  border: 1px solid rgba(29,78,216,0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+.sast-box h3 {
+  margin-bottom: 0.5rem;
+}
+.sast-box p {
+  margin-bottom: 0;
+}
+.sast-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+.sast-btn:hover { background: #1540C2; }
+.sast-result {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border-left: 4px solid var(--accent-warm);
+  border-radius: 0 6px 6px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  display: none;
+  line-height: 1.9;
+}
+
+/* ── DIAGRAMA PIPELINE ─────────────────────────────────────────
+   Pegar al final de styles.css
+──────────────────────────────────────────────────────────────── */
+.diagram-wrap {
+  margin: 2.5rem 0;
+}
+
+.diagram-desc {
+  margin-bottom: 1.25rem;
+}
+
+.diagram-container {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  padding: 1.5rem 1rem;
+  overflow-x: auto;       /* scroll horizontal en móvil si hace falta */
+}
+
+.diagram-container svg {
+  display: block;
+  min-width: 480px;       /* evita que el SVG se aplaste en pantallas muy pequeñas */
+}
+
+/* ── BIBLIOGRAFÍA ── */
+.bib-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bib-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.bib-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(29, 78, 216, 0.08);
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.bib-text {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+}
+
+.bib-text em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.bib-text a {
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.bib-text a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
