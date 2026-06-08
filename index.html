@@ -170,7 +170,7 @@ que ya es tarde, es asegurarnos de que ese código sea seguro desde el primer d�
 <!-- Pegar justo después del .intro-story y antes del .video-wrap en sección 02 -->
 
 <div class="diagram-wrap">
-  <h3>El pipeline del SDLC: tradicional vs Shift Left</h3>
+  <h3 class="diagram-title">El pipeline del SDLC: tradicional vs Shift Left</h3>
   <p class="diagram-desc">
     En el enfoque tradicional la seguridad llega al final, cuando corregir un fallo
     ya cuesta hasta 100 veces más. Shift Left la integra desde los requisitos,
@@ -579,7 +579,7 @@ cómo se aplica en el desarrollo de software.</p>
   <div class="section-label">05 — Grupo #8 · Análisis de Código</div>
   <h2>Código vulnerable y su corrección</h2>
 
-  <p>El siguiente fragmento fue desarrollado por el <strong>Grupo #8</strong> como parte del sprint de validación de formularios. A simple vista parece funcional, pero contiene vulnerabilidades reales que en producción podrían comprometer la estabilidad del sistema.</p>
+  <p>El siguiente fragmento de código corresponde al grupo #8. A simple vista parece funcional, pero contiene vulnerabilidades reales que en producción podrían comprometer la estabilidad del sistema.</p>
 
   <!-- Código vulnerable -->
   <div class="code-section">
@@ -603,7 +603,7 @@ cómo se aplica en el desarrollo de software.</p>
   </div>
 
   <!-- Tabla OWASP -->
- <h3>Análisis de vulnerabilidades</h3>
+ <h3 class="vuln-title">Análisis de vulnerabilidades</h3>
  <p>A continuación se identifican las vulnerabilidades presentes en el código, 
 clasificadas según el estándar OWASP Top 10 y el tipo de prueba que permitiría detectarlas.</p>
 <div class="analysis-wrap">
@@ -657,7 +657,7 @@ clasificadas según el estándar OWASP Top 10 y el tipo de prueba que permitirí
   </div>
 
   <!-- Código seguro -->
-  <h3>Código mejorado — Shift Left aplicado</h3>
+  <h3 class="vuln-title">Código mejorado — Shift Left aplicado</h3>
   <p>Cada bloque del código corrige directamente una de las 
 vulnerabilidades identificadas en la tabla anterior.</p>
   <div class="code-section">
@@ -723,7 +723,7 @@ vulnerabilidades identificadas en la tabla anterior.</p>
   </ul>
 </div>
 
-  <p style="margin-top: 1.5rem;">Este ejercicio demuestra que incluso un fragmento de código pequeño puede esconder múltiples puntos de fallo. Aplicar Shift Left Security desde el primer sprint evita que estos problemas lleguen a producción.</p>
+  <p style="margin-top: 1.5rem; margin-bottom: 0px;">Este ejercicio demuestra que incluso un fragmento de código pequeño puede esconder múltiples puntos de fallo. Aplicar Shift Left Security desde el primer sprint evita que estos problemas lleguen a producción.</p>
 
 </section>
 <div class="divider"></div>
@@ -731,17 +731,18 @@ vulnerabilidades identificadas en la tabla anterior.</p>
 <!-- ── 06 REFLEXIÓN ── -->
 <section id="reflexion" class="reveal">
   <div class="section-label">06 — Reflexión Crítica</div>
-  <h2>Lo que aprendimos</h2>
+  <h2 class="ap-t2">Lo que aprendimos</h2>
 
   
 
   <br>
-  <p>Analizar nuestro propio código con ojos críticos fue uno de los ejercicios más valiosos de este proceso. Lo que parecía una validación simple —verificar si alguien es mayor de 18— escondía tres vulnerabilidades reales que en producción podrían causar caídas del sistema o comportamientos inesperados.</p>
+  <p>Analizar nuestro propio código con ojos críticos fue uno de los ejercicios más valiosos de este proceso. Lo que parecía una validación simple, verificar si alguien es mayor de 18, escondía tres vulnerabilidades reales que en producción podrían causar caídas del sistema o comportamientos inesperados.</p>
+  <p>Aprendimos que un desarrollador no puede limitarse a preguntarse ¿funciona el código? sino también ¿es seguro? Esas dos preguntas deben hacerse al mismo tiempo, desde el primer sprint</p>
 
-  <p>Shift Left Security no es solo una técnica; es un cambio de mentalidad. Nos enseña que <strong>la seguridad no se agrega al final, se diseña desde el principio</strong>. Como ingenieros de software, adoptar esta filosofía nos hace mejores profesionales y nos prepara para construir sistemas en los que las personas puedan confiar.</p>
+  <p>Shift Left Security no es solo una técnica; es un cambio de mentalidad. Nos enseña que la seguridad no se agrega al final, se diseña desde el principio. Como futuros ingenieros de software, adoptar esta filosofía nos hace mejores profesionales y nos prepara para construir sistemas en los que las personas puedan confiar.</p>
   <div class="reflection-quote">
-    <p>"La seguridad no es una función del producto — es una propiedad que debe estar presente desde el primer commit."</p>
-    <cite>— Paulina Chica &amp; Antonio Mendieta, Grupo #8</cite>
+    <p>"La seguridad no es una función del producto, es una propiedad que debe estar presente desde el primer commit."</p>
+    <cite>— Paulina Chica &amp; Antonio Mendieta</cite>
   </div>
 
 </section>

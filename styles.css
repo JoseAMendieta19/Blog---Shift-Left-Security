@@ -606,6 +606,18 @@ pre {
   padding: 0 1.5rem;
 }
 
+.diagram-title{
+  margin-bottom: 5px;
+}
+
+.vuln-title{
+  margin-bottom: 5px;
+  margin-top: 9px;
+}
+.ap-t2{
+  margin-bottom: 8px;
+}
+
 /* ── ANALYSIS TABLE ── */
 .analysis-wrap {
   overflow-x: auto;
