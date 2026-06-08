@@ -76,10 +76,14 @@ p strong {
   margin: 0;
 }
 .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 2rem;
   list-style: none;
 }
+
 .nav-links a {
   font-size: 0.85rem;
   font-weight: 500;
@@ -88,6 +92,7 @@ p strong {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--accent); }
 
