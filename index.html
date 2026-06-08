@@ -59,7 +59,7 @@
     <div class="hero-authors">
       <span>Paulina Chica</span>
       <span>-</span>
-      <span>Jose Antonio Mendieta</span>
+      <span>Antonio Mendieta</span>
     </div>
 
   </div>
@@ -106,14 +106,52 @@ que ya es tarde, es asegurarnos de que ese código sea seguro desde el primer d�
 
   <div class="def-grid">
     <div class="def-card">
-      <div class="def-source">OWASP</div>
+      <div class="def-source">(OWASP, 2025)</div>
       <p>Shift Left Security es la práctica de integrar la seguridad en las primeras etapas del ciclo de vida del desarrollo de software (SDLC), en lugar de tratarla como una fase separada al final del proceso.</p>
     </div>
     <div class="def-card">
-      <div class="def-source">NIST</div>
+      <div class="def-source">(NIST, 2024)</div>
       <p>Shifting left significa mover la seguridad más temprano en el pipeline de desarrollo, integrándola en las fases de diseño, codificación y pruebas, para que las vulnerabilidades se detecten antes de llegar a producción.</p>
     </div>
   </div>
+
+  <!-- Entre .def-grid y Los 5 Principios -->
+
+<div class="intro-story">
+  Básicamente, en el desarrollo tradicional la seguridad siempre se dejaba para
+  el final, lo que terminaba siendo un dolor de cabeza porque arreglar los fallos
+  a última hora retrasaba todo el despliegue. Al aplicar <strong>Shift Left</strong>,
+  lo que hacemos es cambiar esa mentalidad: metemos la seguridad desde el día uno
+  en el código y en cada Sprint, haciendo pruebas continuas para atrapar los errores
+  rápido, ahorrar recursos y lanzar software que ya nace seguro.
+</div>
+
+<div class="video-wrap">
+  <h3 class="video-title">Video explicativo</h3>
+  <p class="video-texto">El siguiente recurso audiovisual
+resume de forma sencilla y concisa qué es Shift Left Security y
+cómo se aplica en el desarrollo de software.</p>
+  <div class="video-container">
+  <video controls width="100%" poster="./imagenes/miniatura.png">
+    <source src="./videos/Shift Left video.mp4" type="video/mp4" >
+    <track 
+      kind="subtitles" 
+      src="videos/shiftleft.vtt" 
+      srclang="es" 
+      label="Español"
+      default>
+  </video>
+</div>
+
+
+</div>
+<p class="video-credit">
+  Créditos: <strong>
+(GeekCore, 2026)</strong> · 
+  <a href="https://youtu.be/mDz01UCC_T4?si=eNHTKmrFJl5jHoVk" target="_blank">
+    Ver video original en YouTube
+  </a>
+</p>
 
   <h3>Los 5 Principios</h3>
   <div class="principles-list">
@@ -142,7 +180,7 @@ que ya es tarde, es asegurarnos de que ese código sea seguro desde el primer d�
       <div class="principle-num">4</div>
       <div>
         <div class="principle-title">Detección temprana de vulnerabilidades</div>
-        <p class="principle-desc">Detectar un fallo en desarrollo cuesta hasta 100 veces menos que corregirlo en producción. Se usan herramientas SAST y DAST durante el desarrollo, no después.</p>
+        <p class="principle-desc">Corregir un fallo en producción cuesta hasta 100 veces más que detectarlo a tiempo en la fase de desarrollo. El uso de herramientas automatizadas como SAST y DAST durante el sprint evita brechas críticas y optimiza los costos de infraestructura.</p>
       </div>
     </div>
     <div class="principle-item">
