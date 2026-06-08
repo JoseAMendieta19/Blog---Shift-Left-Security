@@ -700,9 +700,10 @@ footer {
     flex-direction: column;
     padding: 1rem 2rem;
     gap: 1rem;
+    z-index: 99;
+    transform: none;
   }
   .nav-links.open { display: flex; }
-  /* .nav-tag ya está oculto desde el breakpoint de 900px */
 }
 
 /* ── TEAM ── */
